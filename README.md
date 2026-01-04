@@ -12,18 +12,16 @@ rm -rf .git
 
 ```shell
 git clone https://github.com/lpndev/laravel-setup.git
-mv laravel-setup/{.envrc,compose.yml,flake.nix} .
-```
-
-### Initialize git and commit changes
-
-```shell
-git init
-git add .
-git commit -m "initial commit"
+mv -f laravel-setup/{.*, *} .
+rm -rf .git laravel-setup
 ```
 
 #### Recommended `.env` for mysql
+
+```shell
+# Copy .env.example to .env
+cp .env.example .env
+```
 
 ```dotenv
 APP_NAME="Project Name"
@@ -34,7 +32,6 @@ DB_PORT=3306
 DB_DATABASE=project-name
 DB_USERNAME=user
 DB_PASSWORD=pass
-DB_VOLUME=project-name_mysql_data
 ```
 
 If using [Supabase](https://supabase.com/docs/guides/getting-started/quickstarts/laravel):
@@ -74,11 +71,18 @@ direnv allow
 ### Install dependencies
 
 ```shell
-npm install
-npm update
+npm install && npm update
+npm install --save-dev @prettier/plugin-php
 
-composer install
-composer update
+composer install && composer update
+```
+
+### Initialize git and commit changes
+
+```shell
+git init
+git add .
+git commit -m "initial commit"
 ```
 
 ### Start development server
