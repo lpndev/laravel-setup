@@ -12,7 +12,7 @@ rm -rf .git
 
 ```shell
 git clone https://github.com/lpndev/laravel-setup.git
-mv -f laravel-setup/{.*, *} .
+mv -f laravel-setup/* laravel-setup/.* .
 rm -rf .git laravel-setup
 ```
 
