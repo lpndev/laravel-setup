@@ -45,8 +45,8 @@ echo -e "experimental-features = nix-command flakes\ntrusted-users = root $(whoa
 2. Install direnv using Nix:
 
 ```shell
-nix profile install nixpkgs#direnv
-nix profile install nixpkgs#nixfmt
+nix profile add nixpkgs#direnv
+nix profile add nixpkgs#nixfmt
 
 # ~/.zshrc: eval "$(direnv hook zsh)"
 ```
