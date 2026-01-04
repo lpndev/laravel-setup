@@ -3,10 +3,24 @@
 ### Clone an Laravel starter kit
 
 ```shell
-git clone https://github.com/laravel/vue-starter-kit
-mv vue-starter-kit project-name
+git clone https://github.com/laravel/vue-starter-kit project-name
 cd project-name
 rm -rf .git
+```
+
+### Clone this repo inside the Laravel starter kit
+
+```shell
+git clone https://github.com/lpndev/laravel-setup.git .
+rm -rf .git
+```
+
+### Initialize git and commit changes
+
+```shell
+git init
+git add .
+git commit -m "initial commit"
 ```
 
 #### Recommended `.env` for mysql
