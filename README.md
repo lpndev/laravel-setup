@@ -11,8 +11,8 @@ rm -rf .git
 ### Clone this repo inside the Laravel starter kit
 
 ```shell
-git clone https://github.com/lpndev/laravel-setup.git .
-rm -rf .git
+git clone https://github.com/lpndev/laravel-setup.git
+mv laravel-setup/{.envrc,compose.yml,flake.nix} .
 ```
 
 ### Initialize git and commit changes
@@ -46,7 +46,7 @@ DB_URL=postgres://postgres.xxxx:password@xxxx.pooler.supabase.com:5432/postgres
 
 - Remove the `compose.yml` in this case.
 
-### Install dependencies (php, composer & node):
+### Install required tools:
 
 1. Install Nix:
 
@@ -66,3 +66,28 @@ nix profile add nixpkgs#nixfmt
 ```
 
 3. Use `flake.nix` to install required packages/dependencies
+
+```shell
+direnv allow
+```
+
+### Install dependencies
+
+```shell
+npm install
+npm update
+
+composer install
+composer update
+```
+
+### Start development server
+
+```shell
+docker compose up -d
+
+compose run dev
+
+# Run database migration
+php artisan migrate
+```
