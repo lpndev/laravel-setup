@@ -20,29 +20,13 @@
       {
         devShells.default = pkgs.mkShell {
           packages = with pkgs; [
-            (php84.withExtensions (
-              { enabled }:
-              with enabled;
-              [
-                ctype
-                curl
-                dom
-                gd
-                iconv
-                intl
-                mbstring
-                opcache
-                pdo
-                xml
-                zip
-              ]
-            ))
+            php84
             php84Packages.composer
             nodejs_24
           ];
         };
 
-        formatter = pkgs.nixpkgs-fmt;
+        formatter = pkgs.nixfmt;
       }
     );
 }
