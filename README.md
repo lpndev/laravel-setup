@@ -90,8 +90,9 @@ git commit -m "initial commit"
 ```shell
 docker compose up -d
 
-compose run dev
+composer run dev
 
-# Run database migration
+# Essential commands
 php artisan migrate
+php artisan key:generate
 ```
