@@ -1,11 +1,21 @@
 ## Laravel setup guide for development
 
+#### Stack:
+
+- **Laravel** (backend)
+- **Vue** (frontend)
+- **MySQL** (database)
+- **Docker** (containers)
+- **Nix** (packages)
+- **PHP** (language)
+- **Composer** (dependencies)
+- **Node** (runtime)
+
 ### Clone an Laravel starter kit
 
 ```shell
 git clone https://github.com/laravel/vue-starter-kit project-name
 cd project-name
-rm -rf .git
 ```
 
 ### Clone this repo inside the Laravel starter kit
@@ -20,7 +30,7 @@ rm -rf .git laravel-setup
 
 ```shell
 # Copy .env.example to .env
-cp .env.example .env
+mv .env.example .env
 ```
 
 ```dotenv
@@ -80,9 +90,7 @@ composer install && composer update
 ### Initialize git and commit changes
 
 ```shell
-git init
-git add .
-git commit -m "initial commit"
+git init && git add . && git commit -m "initial commit"
 ```
 
 ### Start development server
