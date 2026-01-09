@@ -10,6 +10,7 @@
 - **PHP** (language)
 - **Composer** (dependencies)
 - **Node** (runtime)
+- **PNPM** (packages)
 
 ### Clone an Laravel starter kit
 
@@ -26,12 +27,13 @@ mv -f laravel-setup/* laravel-setup/.* .
 rm -rf .git laravel-setup
 ```
 
-#### Recommended `.env` for mysql
+#### Copy .env.example to .env
 
 ```shell
-# Copy .env.example to .env
 cp .env.example .env
 ```
+
+#### Recommended `.env` settings:
 
 ```dotenv
 APP_NAME="Project Name"
@@ -43,15 +45,6 @@ DB_DATABASE=project-name
 DB_USERNAME=user
 DB_PASSWORD=pass
 ```
-
-If using [Supabase](https://supabase.com/docs/guides/getting-started/quickstarts/laravel):
-
-```dotenv
-DB_CONNECTION=pgsql
-DB_URL=postgres://postgres.xxxx:password@xxxx.pooler.supabase.com:5432/postgres
-```
-
-- Remove the `compose.yml` in this case.
 
 ### Install required tools:
 
@@ -96,11 +89,13 @@ git init && git add . && git commit -m "initial commit"
 ### Start development server
 
 ```shell
-docker compose up -d
-
-composer run dev
-
-# Essential commands
+# Run migrations and generate app key
 php artisan migrate
 php artisan key:generate
+
+# Start Docker containers
+docker compose up -d
+
+# Start development server
+composer run dev
 ```

@@ -22,7 +22,8 @@
           packages = with pkgs; [
             php84
             php84Packages.composer
-            nodejs_24
+            nodejs
+            pnpm
           ];
         };
 

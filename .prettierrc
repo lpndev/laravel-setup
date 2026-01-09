@@ -1,9 +1,5 @@
 {
-  "plugins": [
-    "@prettier/plugin-php",
-    "prettier-plugin-organize-imports",
-    "prettier-plugin-tailwindcss"
-  ],
+  "plugins": ["@prettier/plugin-php", "prettier-plugin-organize-imports", "prettier-plugin-tailwindcss"],
   "overrides": [
     {
       "files": "*.php",
@@ -12,11 +8,7 @@
       }
     }
   ],
-  "tailwindFunctions": [
-    "clsx",
-    "cn",
-    "cva"
-  ],
+  "tailwindFunctions": ["clsx", "cn", "cva"],
   "tailwindStylesheet": "resources/css/app.css",
   "arrowParens": "always",
   "bracketSameLine": false,
@@ -29,7 +21,7 @@
   "insertPragma": false,
   "jsxSingleQuote": true,
   "objectWrap": "preserve",
-  "printWidth": 140,
+  "printWidth": 120,
   "proseWrap": "preserve",
   "quoteProps": "as-needed",
   "requirePragma": false,
