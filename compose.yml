@@ -1,26 +1,43 @@
 services:
   mysql:
     image: mysql:8.0
+    restart: unless-stopped
     environment:
       MYSQL_DATABASE: ${DB_DATABASE}
       MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
       MYSQL_USER: ${DB_USERNAME}
       MYSQL_PASSWORD: ${DB_PASSWORD}
     ports:
-      - "${DB_PORT}:3306"
+      - "${DB_PORT:-3306}:3306"
     volumes:
       - mysql_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-p${DB_PASSWORD}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
+    networks:
+      - laravel
 
   phpmyadmin:
     image: phpmyadmin:latest
+    restart: unless-stopped
     environment:
       PMA_HOST: mysql
       PMA_USER: root
       PMA_PASSWORD: ${DB_PASSWORD}
     ports:
-      - "8081:80"
+      - "${PMA_PORT:-8081}:80"
     depends_on:
-      - mysql
+      mysql:
+        condition: service_healthy
+    networks:
+      - laravel
+
+networks:
+  laravel:
+    driver: bridge
 
 volumes:
   mysql_data:
