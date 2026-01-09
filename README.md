@@ -103,6 +103,9 @@ docker compose up -d
 php artisan migrate
 php artisan key:generate
 
+# Build application
+pnpm run build
+
 # Start development server
 composer run dev
 ```
