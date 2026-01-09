@@ -74,10 +74,17 @@ direnv allow
 ### Install dependencies
 
 ```shell
-pnpm install && pnpm update
-pnpm install --save-dev @prettier/plugin-php
+# Install node dependencies
+pnpm install
 
-composer install && composer update
+# Install php dependencies
+composer install
+
+# Add php plugin for prettier
+pnpm add -D @prettier/plugin-php
+
+# Format all files with prettier
+pnpx prettier --write .
 ```
 
 ### Initialize git and commit changes
@@ -89,12 +96,12 @@ git init && git add . && git commit -m "initial commit"
 ### Start development server
 
 ```shell
-# Run migrations and generate app key
+# Start docker containers
+docker compose up -d
+
+# Run migrations and generate key
 php artisan migrate
 php artisan key:generate
-
-# Start Docker containers
-docker compose up -d
 
 # Start development server
 composer run dev
