@@ -74,8 +74,8 @@ direnv allow
 ### Install dependencies
 
 ```shell
-npm install && npm update
-npm install --save-dev @prettier/plugin-php
+pnpm install && npm update
+pnpm install --save-dev @prettier/plugin-php
 
 composer install && composer update
 ```
