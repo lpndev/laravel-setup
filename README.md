@@ -43,7 +43,7 @@ DB_HOST=127.0.0.1
 DB_PORT=3306
 DB_DATABASE=project-name
 DB_USERNAME=user
-DB_PASSWORD=pass
+DB_PASSWORD=password
 ```
 
 ### Install required tools:
@@ -80,11 +80,11 @@ pnpm install
 # Install php dependencies
 composer install
 
-# Add php plugin for prettier
-pnpm add -D @prettier/plugin-php
-
 # Format all files with prettier
 pnpx prettier --write .
+
+# Edit .vscode/settings.json with php-cs-fixer nix id
+which nix
 ```
 
 ### Initialize git and commit changes

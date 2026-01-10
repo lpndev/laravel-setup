@@ -1,0 +1,12 @@
+{
+  "[php]": {
+    "editor.codeActionsOnSave": {
+      "source.fixAll.php-cs-fixer": "explicit"
+    },
+    "editor.defaultFormatter": "junstyle.php-cs-fixer"
+  },
+  "php-cs-fixer.autoFixByBracket": true,
+  "php-cs-fixer.autoFixBySemicolon": true,
+  "php-cs-fixer.executablePath": "/nix/store/id-here/bin/php-cs-fixer",
+  "php-cs-fixer.rules": "@Symfony"
+}

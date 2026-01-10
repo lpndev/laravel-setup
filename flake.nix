@@ -22,6 +22,7 @@
           packages = with pkgs; [
             php84
             php84Packages.composer
+            php84Packages.php-cs-fixer
             nodejs
             pnpm
           ];
