@@ -80,11 +80,14 @@ pnpm install
 # Install php dependencies
 composer install
 
-# Format all files with prettier
+# Format all js files with prettier
 pnpx prettier --write .
 
 # Edit .vscode/settings.json with php-cs-fixer nix id
 which nix
+
+# Format all php files with php-cs-fixer
+php-cs-fixer fix .
 ```
 
 ### Initialize git and commit changes
