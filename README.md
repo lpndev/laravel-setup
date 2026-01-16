@@ -19,6 +19,12 @@ git clone https://github.com/laravel/vue-starter-kit project-name
 cd project-name
 ```
 
+Or create an empty project
+
+```shell
+composer create-project laravel/laravel project-name
+```
+
 ### Clone this repo inside the Laravel starter kit
 
 ```shell
@@ -83,8 +89,8 @@ composer install
 # Format all js files with prettier
 pnpx prettier --write .
 
-# Edit .vscode/settings.json with php-cs-fixer nix id
-which nix
+# Replace .vscode/settings.json with actual nix id
+which php-cs-fixer
 
 # Format all php files with php-cs-fixer
 php-cs-fixer fix .
